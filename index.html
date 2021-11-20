@@ -1,0 +1,64 @@
+<html lang="it-it">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>xdslctl to fritzexport</title>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Material+Icons&display=swap" rel="stylesheet">
+    <script src="assets/js/script.js"></script>
+    <link rel="stylesheet" href="assets/css/form.css">
+</head>
+<body>
+<div id="headbar">
+    <a id="name">xdslctl to fritzexport</a>
+    <a href="https://github.com/handymenny" id="author">by handymenny</a></div>
+<div class="container">
+    <div class="col-lg-12 col-md-12">
+        <div id="account-holder">
+            <form id="uploadform">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label"
+                            >This tool converts the output of xdslctl* into a format (fritzexport format) compatible
+                                with the <a href="https://fibra.click/hlog/generatore/"
+                                            style="text-decoration: underline">hlog generator by fibraclick</a>.</label>
+                            <label class="control-label required" id="logDescription"
+                            ><br>
+                                Paste the output of:<br><code>xdslctl info --stats<br>
+                                    xdslctl info --QLN<br>
+                                    xdslctl info --Hlog<br>
+                                    xdslctl info --vectoring<br>
+                                    xdslctl info --pbParams<br></code>
+                                Alternatively, you can also attach a file containing that output.</label>
+
+                            <div class="d-flex">
+                                <input accept="" class="form-control"
+                                       id="log" name="log"
+                                       placeholder="Attach a file" type="file">
+                                <button class="btn btn-outline-danger btn-sm" disabled id="delbtn" onclick="clearFile()"
+                                        type="button"><i class="material-icons">delete</i>
+                                </button>
+                            </div>
+                            <textarea class="form-control" id="logText"
+                                      name="logText"
+                                      placeholder="Paste the output of xdslctl"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <button class="btn btn-primary btn-block">Submit</button>
+                    </div>
+                </div>
+                <label class="control-label"
+                ><small>* The most common alternative names are: adsl, adslctl, bcm_xdslctl</small></label>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
